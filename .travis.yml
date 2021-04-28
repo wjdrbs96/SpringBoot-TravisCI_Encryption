@@ -4,17 +4,22 @@ jdk:
 
 brances:
   only:
-    - master   # master 브랜치에 push 가 되었을 때 Travis CI 반응
+    - master
 
 cache:
   directories:
-    - '$HOME/.m2/repository'
-    - '$HOME/.gradle'
+    - "$HOME/.m2/repository"
+    - "$HOME/.gradle"
 
 script:
-  - "./gradlew clean build"   # jar 만들기
+    - "./gradlew clean build"
 
-notification:  # 이메일 알림
+before_install:
+  - openssl aes-256-cbc -K $encrypted_99eda7ed15ec_key -iv $encrypted_99eda7ed15ec_iv
+    -in gyunny.tar.enc -out gyunny.tar -d
+
+notification:
   email:
     recipients:
-      - wjdrbs966@naver.com
+    - wjdrbs966@naver.com
+
