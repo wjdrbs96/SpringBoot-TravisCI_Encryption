@@ -1,0 +1,20 @@
+language: java
+jdk:
+  - openjdk11
+
+brances:
+  only:
+    - master   # master 브랜치에 push 가 되었을 때 Travis CI 반응
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
+
+script:
+  - "./gradlew clean build"   # jar 만들기
+
+notification:  # 이메일 알림
+  email:
+    recipients:
+      - wjdrbs966@naver.com
