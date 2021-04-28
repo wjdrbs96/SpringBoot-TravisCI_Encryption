@@ -11,5 +11,6 @@ cache:
 script:
 - "./gradlew clean build"
 before_install:
-- openssl aes-256-cbc -K $encrypted_c1ad7a6a264d_key -iv $encrypted_c1ad7a6a264d_iv
-  -in gyunny.tar.enc -out ./src/main/resources/gyunny.tar -d
+- openssl aes-256-cbc -K $encrypted_99eda7ed15ec_key -iv $encrypted_99eda7ed15ec_iv
+  -in gyunny.tar.enc -out gyunny.tar -d
+- tar xvf secrets.tar
